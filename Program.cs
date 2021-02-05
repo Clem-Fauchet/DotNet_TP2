@@ -27,6 +27,7 @@ namespace TP2
             #region Q2
             Console.WriteLine("Question 2");
             // Afficher les personnes enregistré avec le role Automobiliste.
+            FakeDb.Instance.Users.Where(x => x.Roles.Select(y => y.Name).Any(y => y.Equals("Automobiliste")));
 
             #endregion
             #region Q3

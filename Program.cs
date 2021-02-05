@@ -12,11 +12,7 @@ namespace TP2
     {
         public static void Main(string[] args)
         {
-            foreach (var item in FakeDb.Instance.Users)
-            {
-                Console.WriteLine(item);
-            }
-
+  
             #region Q1
             Console.WriteLine("Question 1");
             // Afficher le nombre de personne s'appelant Dupond ou Dupont.
@@ -28,7 +24,10 @@ namespace TP2
             Console.WriteLine("Question 2");
             // Afficher les personnes enregistré avec le role Automobiliste.
             var q2 = FakeDb.Instance.Users.Where(x => x.Roles.Select(y => y.Name).Any(y => y.Equals("Automobiliste")));
-            Console.WriteLine(q2);
+            foreach (var item in q2)
+            {
+                Console.WriteLine($"{ item.Firstname} - { item.Lastname}");
+            }
 
             #endregion
             #region Q3

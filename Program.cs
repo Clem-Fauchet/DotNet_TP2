@@ -20,6 +20,8 @@ namespace TP2
             #region Q1
             Console.WriteLine("Question 1");
             // Afficher le nombre de personne s'appelant Dupond ou Dupont.
+            FakeDb.Instance.Users.Count(x => x.Lastname.Equals("Dupond"));
+            FakeDb.Instance.Users.Count(x => x.Lastname.Equals("Dupont"));
 
             #endregion
             #region Q2

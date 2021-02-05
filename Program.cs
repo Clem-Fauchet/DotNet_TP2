@@ -20,19 +20,21 @@ namespace TP2
             #region Q1
             Console.WriteLine("Question 1");
             // Afficher le nombre de personne s'appelant Dupond ou Dupont.
-            FakeDb.Instance.Users.Count(x => x.Lastname.Equals("Dupond"));
-            FakeDb.Instance.Users.Count(x => x.Lastname.Equals("Dupont"));
+            var q1 = FakeDb.Instance.Users.Count(x => x.Lastname.Equals("Dupond") || x.Lastname.Equals("Dupont"));
+            Console.WriteLine(q1);
 
             #endregion
             #region Q2
             Console.WriteLine("Question 2");
             // Afficher les personnes enregistré avec le role Automobiliste.
-            FakeDb.Instance.Users.Where(x => x.Roles.Select(y => y.Name).Any(y => y.Equals("Automobiliste")));
+            var q2 = FakeDb.Instance.Users.Where(x => x.Roles.Select(y => y.Name).Any(y => y.Equals("Automobiliste")));
+            Console.WriteLine(q2);
 
             #endregion
             #region Q3
             Console.WriteLine("Question 3");
             // Afficher les plaques d'immatriculation de toutes les voitures (une seule fois par voiture) liées à au moins un utilisateur.
+            //FakeDb.Instance.Cars.Distinct().Where(x => x.Registration)
 
             #endregion
             #region Q4
